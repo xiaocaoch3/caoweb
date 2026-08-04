@@ -86,12 +86,12 @@ export type InterestItem = {
 };
 
 export const interestItems: InterestItem[] = [
-  { id: "bike", title: "骑行", label: "自行车", icon: "bike", summary: "用稳定的节奏观察城市，也训练长距离目标下的耐心与规划。", position: { x: "25.5%", y: "61.5%" } },
-  { id: "swim", title: "游泳", label: "泳镜与泳帽", icon: "swim", summary: "在水中专注呼吸和动作，让我重新获得安静、连续的注意力。", position: { x: "24%", y: "71%" } },
-  { id: "badminton", title: "羽毛球", label: "羽毛球拍", icon: "badminton", summary: "快速判断、即时反馈和与搭档配合，是我喜欢这项运动的原因。", position: { x: "28%", y: "76.5%" } },
-  { id: "run", title: "跑步", label: "跑鞋", icon: "run", summary: "把大目标拆成一次次出发，用可感知的进步保持长期行动。", position: { x: "26%", y: "82%" } },
-  { id: "fitness", title: "力量训练", label: "健身器材", icon: "fitness", summary: "记录训练、调整动作并持续复盘，是另一种产品式的自我迭代。", position: { x: "48%", y: "71%" } },
-  { id: "yoga", title: "瑜伽", label: "瑜伽垫", icon: "yoga", summary: "放慢呼吸、感受身体状态，也为高密度的工作留出恢复空间。", position: { x: "34%", y: "72%" } },
-  { id: "camera", title: "摄影", label: "相机", icon: "camera", summary: "通过构图和光线留意被忽略的细节，也练习更准确地表达观察。", position: { x: "80.5%", y: "32%" } },
-  { id: "microphone", title: "表达", label: "话筒", icon: "microphone", summary: "把复杂问题讲清楚，尝试用更有结构、也更有人情味的方式沟通。", position: { x: "74%", y: "32.5%" } },
+  { id: "bike", title: "骑行", label: "自行车", icon: "bike", summary: "用稳定的节奏观察城市，也训练长距离目标下的耐心与规划。", position: { x: "35%", y: "58%" } },
+  { id: "swim", title: "游泳", label: "泳镜与泳帽", icon: "swim", summary: "在水中专注呼吸和动作，让我重新获得安静、连续的注意力。", position: { x: "25%", y: "68%" } },
+  { id: "badminton", title: "羽毛球", label: "羽毛球拍", icon: "badminton", summary: "快速判断、即时反馈和与搭档配合，是我喜欢这项运动的原因。", position: { x: "31%", y: "72%" } },
+  { id: "run", title: "跑步", label: "跑鞋", icon: "run", summary: "把大目标拆成一次次出发，用可感知的进步保持长期行动。", position: { x: "34%", y: "81%" } },
+  { id: "fitness", title: "力量训练", label: "健身器材", icon: "fitness", summary: "记录训练、调整动作并持续复盘，是另一种产品式的自我迭代。", position: { x: "50%", y: "68%" } },
+  { id: "yoga", title: "瑜伽", label: "瑜伽垫", icon: "yoga", summary: "放慢呼吸、感受身体状态，也为高密度的工作留出恢复空间。", position: { x: "39%", y: "68%" } },
+  { id: "camera", title: "摄影", label: "相机", icon: "camera", summary: "通过构图和光线留意被忽略的细节，也练习更准确地表达观察。", position: { x: "70%", y: "33%" } },
+  { id: "microphone", title: "表达", label: "话筒", icon: "microphone", summary: "把复杂问题讲清楚，尝试用更有结构、也更有人情味的方式沟通。", position: { x: "65%", y: "32%" } },
 ];

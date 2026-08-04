@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { JourneySnake } from "./JourneySnake";
 import { SiteNav } from "./SiteNav";
 import { useWorldPreferences } from "./world-preferences";
@@ -18,7 +19,7 @@ export function UndergroundScene() {
   const [{ season, weather }] = useWorldPreferences();
 
   const backgroundImage = `/learning-cave-${season}-v20.png`;
-  const backdropImage = `/learning-cave-${season}-ultrawide-v21.png`;
+  const wideBackgroundImage = `/learning-cave-${season}-ultrawide-v21.png`;
 
   return (
     <main
@@ -32,7 +33,7 @@ export function UndergroundScene() {
         <div
           className="portfolio-cross-section__backdrop"
           style={{
-            backgroundImage: `linear-gradient(rgba(8, 7, 6, .12), rgba(8, 6, 5, .24)), url("${backdropImage}")`,
+            backgroundImage: `linear-gradient(rgba(8, 7, 6, .12), rgba(8, 6, 5, .24)), url("${wideBackgroundImage}")`,
           }}
           aria-hidden="true"
         />
@@ -46,8 +47,9 @@ export function UndergroundScene() {
             <div
               className="portfolio-cross-section__art"
               style={{
-                backgroundImage: `linear-gradient(rgba(8, 9, 9, .02), rgba(8, 6, 5, .12)), url("${backgroundImage}")`,
-              }}
+                "--portfolio-scene-image": `url("${backgroundImage}")`,
+                "--portfolio-wide-scene-image": `url("${wideBackgroundImage}")`,
+              } as CSSProperties}
               aria-hidden="true"
             />
             {weather === "rain" && (
