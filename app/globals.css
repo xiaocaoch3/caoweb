@@ -2777,6 +2777,21 @@ button, input { font: inherit; }
     transform: translateX(-50%);
   }
 
+  /* LEVEL -01 follows the surface page's full-bleed treatment. Size the
+     entire coordinate plane like object-fit: cover so artwork and hotspots
+     are cropped and scaled together instead of leaving a smaller stage. */
+  .cave-artboard--portfolio {
+    top: 50%;
+    bottom: auto;
+    width: max(100vw, 177.683316svh);
+    height: max(56.279904vw, 100svh);
+    transform: translate(-50%, -50%);
+  }
+
+  .portfolio-cross-section__backdrop {
+    display: none;
+  }
+
   .portfolio-cross-section__art,
   .deep-cross-section__art {
     inset: 0;
