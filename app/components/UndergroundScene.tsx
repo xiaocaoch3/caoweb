@@ -18,8 +18,10 @@ const surfaceRainDrops = Array.from({ length: 24 }, (_, index) => ({
 export function UndergroundScene() {
   const [{ season, weather }] = useWorldPreferences();
 
-  const backgroundImage = `/learning-cave-${season}-v20.png`;
-  const wideBackgroundImage = `/learning-cave-${season}-ultrawide-v21.png`;
+  const backgroundImage = "/learning-cave-summer-v20.png";
+  const wideBackgroundImage = "/learning-cave-summer-ultrawide-v21.png";
+  const seasonalSurfaceImage = `/learning-cave-${season}-v20.png`;
+  const wideSeasonalSurfaceImage = `/learning-cave-${season}-ultrawide-v21.png`;
 
   return (
     <main
@@ -49,6 +51,14 @@ export function UndergroundScene() {
               style={{
                 "--portfolio-scene-image": `url("${backgroundImage}")`,
                 "--portfolio-wide-scene-image": `url("${wideBackgroundImage}")`,
+              } as CSSProperties}
+              aria-hidden="true"
+            />
+            <div
+              className="portfolio-season-surface"
+              style={{
+                "--portfolio-surface-image": `url("${seasonalSurfaceImage}")`,
+                "--portfolio-wide-surface-image": `url("${wideSeasonalSurfaceImage}")`,
               } as CSSProperties}
               aria-hidden="true"
             />
