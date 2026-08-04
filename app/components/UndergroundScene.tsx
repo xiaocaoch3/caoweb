@@ -20,8 +20,10 @@ export function UndergroundScene() {
 
   const backgroundImage = "/learning-cave-summer-v20.png";
   const wideBackgroundImage = "/learning-cave-summer-ultrawide-v21.png";
-  const seasonalSurfaceImage = `/learning-cave-${season}-v20.png`;
-  const wideSeasonalSurfaceImage = `/learning-cave-${season}-ultrawide-v21.png`;
+  const surfaceImage =
+    weather === "rain"
+      ? `/surface-${season}-rain-v1.png`
+      : `/surface-${season}-v5.png`;
 
   return (
     <main
@@ -55,11 +57,9 @@ export function UndergroundScene() {
               aria-hidden="true"
             />
             <div
-              className="portfolio-season-surface"
-              style={{
-                "--portfolio-surface-image": `url("${seasonalSurfaceImage}")`,
-                "--portfolio-wide-surface-image": `url("${wideSeasonalSurfaceImage}")`,
-              } as CSSProperties}
+              key={`${season}-${weather}`}
+              className="portfolio-surface-world"
+              style={{ backgroundImage: `url("${surfaceImage}")` }}
               aria-hidden="true"
             />
             {weather === "rain" && (
