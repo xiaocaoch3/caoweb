@@ -20,9 +20,9 @@ const seasons: { id: Season; label: string }[] = [
 ];
 
 const pages = [
-  { href: "/", label: "第一页：地上" },
-  { href: "/portfolio", label: "第二页：学习洞穴" },
-  { href: "/deep", label: "第三页：更深层地下" },
+  { href: "/", index: "01", shortLabel: "地上", label: "第一页：地上" },
+  { href: "/portfolio", index: "02", shortLabel: "学习洞穴", label: "第二页：学习洞穴" },
+  { href: "/deep", index: "03", shortLabel: "兴趣深层", label: "第三页：更深层地下" },
 ];
 
 export function SiteNav({ underground = false }: SiteNavProps) {
@@ -79,7 +79,10 @@ export function SiteNav({ underground = false }: SiteNavProps) {
         </nav>
       </header>
 
-      <nav className="page-dots" aria-label="三页切换">
+      <nav
+        className={`page-dots ${underground ? "page-dots--underground" : ""}`}
+        aria-label="三页切换"
+      >
         {pages.map((page) => {
           const isCurrent =
             page.href === "/"
@@ -96,7 +99,11 @@ export function SiteNav({ underground = false }: SiteNavProps) {
               aria-label={page.label}
               aria-current={isCurrent ? "page" : undefined}
               title={page.label}
-            />
+            >
+              <span className="page-dot__label">{page.shortLabel}</span>
+              <span className="page-dot__index">{page.index}</span>
+              <i className="page-dot__marker" aria-hidden="true" />
+            </Link>
           );
         })}
       </nav>
