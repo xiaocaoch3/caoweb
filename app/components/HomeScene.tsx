@@ -1,118 +1,100 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, BriefcaseBusiness, Download, Mail, MapPin } from "lucide-react";
-import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { BriefcaseBusiness, GraduationCap, Sparkles, UserRound } from "lucide-react";
+import { JourneySnake } from "./JourneySnake";
 import { SiteNav } from "./SiteNav";
+import { useWorldPreferences } from "./world-preferences";
+import { profileContent } from "../data/site-content";
+
+const rainDrops = Array.from({ length: 24 }, (_, index) => ({
+  left: `${(index * 37 + 11) % 101}%`,
+  height: `${8 + ((index * 7) % 17)}px`,
+  opacity: 0.16 + (index % 5) * 0.045,
+  animationDelay: `${-((index * 0.37) % 2.8)}s`,
+  animationDuration: `${1.35 + (index % 7) * 0.16}s`,
+}));
 
 export function HomeScene() {
-  const router = useRouter();
   const reduceMotion = useReducedMotion();
-  const [diving, setDiving] = useState(false);
+  const [{ season, weather }] = useWorldPreferences();
 
-  function enterPortfolio() {
-    if (diving) return;
-    if (reduceMotion) {
-      router.push("/portfolio");
-      return;
-    }
-    setDiving(true);
-    window.setTimeout(() => router.push("/portfolio"), 1050);
-  }
+  const backgroundImage =
+    weather === "rain"
+      ? `/surface-${season}-rain-v1.png`
+      : `/surface-${season}-v5.png`;
 
   return (
-    <main className={`surface-page ${diving ? "is-diving" : ""}`}>
+    <main className={`season-home season-home--${season}`} data-weather={weather}>
       <SiteNav />
-      <motion.div
-        className="surface-sky"
-        animate={diving && !reduceMotion ? { y: "-34vh", opacity: 0 } : undefined}
-        transition={{ duration: 1, ease: [0.65, 0, 0.35, 1] }}
-      >
-        <div className="sky-orb sky-orb--one" />
-        <div className="sky-orb sky-orb--two" />
-        <div className="distant-hill distant-hill--left" />
-        <div className="distant-hill distant-hill--right" />
-      </motion.div>
 
-      <section className="surface-content">
+      <AnimatePresence mode="sync">
         <motion.div
-          className="hero-copy"
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <p className="eyebrow"><MapPin size={15} /> SHANGHAI · OPEN TO WORK</p>
-          <h1><span>YOUR NAME</span><small>YOUR ENGLISH NAME</small></h1>
-          <div className="role-row">
-            <span>互联网产品经理</span>
-            <i />
-            <span>硬件产品经理</span>
-          </div>
-          <h2>关注用户体验、产品策略与<br className="desktop-break" />软硬件协同的产品探索者</h2>
-          <p className="hero-intro">
-            我喜欢把模糊问题梳理成清晰路径，在用户需求、商业目标与工程约束之间，
-            找到可以真正落地的产品答案。
-          </p>
-          <div className="hero-actions">
-            <button className="primary-action" onClick={enterPortfolio} disabled={diving}>
-              <span>进入地下作品集</span><ArrowDown size={18} />
-            </button>
-            <a className="secondary-action" href="/resume.pdf" download>
-              <Download size={17} /><span>下载简历</span>
-            </a>
-          </div>
-          <div className="contact-links" aria-label="联系方式">
-            <a href="mailto:hello@example.com"><Mail size={16} /> hello@example.com</a>
-            <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><BriefcaseBusiness size={16} /> LinkedIn</a>
-          </div>
-        </motion.div>
+          key={`${season}-${weather}`}
+          className="season-background"
+          style={{ backgroundImage: `url("${backgroundImage}")` }}
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ opacity: { duration: 0.45 } }}
+          aria-hidden="true"
+        />
+      </AnimatePresence>
 
-        <motion.div
-          className="entrance-scene"
-          animate={diving && !reduceMotion ? { scale: 1.7, y: "-4vh" } : undefined}
-          transition={{ duration: 1.05, ease: [0.65, 0, 0.35, 1] }}
-          aria-label="原创洞穴入口场景"
-        >
-          <div className="tree">
-            <span className="tree-crown tree-crown--1" />
-            <span className="tree-crown tree-crown--2" />
-            <span className="tree-crown tree-crown--3" />
-            <span className="tree-trunk" />
+      {weather === "rain" && (
+        <div className="rain-overlay" aria-hidden="true">
+          {rainDrops.map((drop, index) => (
+            <span key={index} style={drop} />
+          ))}
+        </div>
+      )}
+
+      <section className="surface-profile" aria-label="个人简介">
+        <div className="surface-profile__photo" role="img" aria-label={profileContent.photoAlt}>
+          <UserRound aria-hidden="true" />
+          <span>PHOTO</span>
+          <small>后续替换为个人照片</small>
+        </div>
+
+        <div className="surface-profile__content">
+          <header>
+            <p>ABOUT ME</p>
+            <h1>个人经历与能力</h1>
+            <span>这里将用照片和简洁的履历，帮助浏览者快速认识你。</span>
+          </header>
+
+          <div className="surface-profile__sections">
+            <article>
+              <h2><GraduationCap /> 教育经历</h2>
+              {profileContent.education.map((item) => (
+                <div className="profile-entry" key={`${item.period}-${item.school}`}>
+                  <time>{item.period}</time>
+                  <strong>{item.school}</strong>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </article>
+
+            <article>
+              <h2><BriefcaseBusiness /> 实习与实践</h2>
+              {profileContent.practice.map((item) => (
+                <div className="profile-entry" key={`${item.period}-${item.organization}`}>
+                  <time>{item.period}</time>
+                  <strong>{item.organization} · {item.role}</strong>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </article>
           </div>
-          <div className="signpost">
-            <span>作品在下面</span>
-          </div>
-          <div className="mailbox">
-            <Mail size={17} />
-          </div>
-          <div className="cave-mound">
-            <div className="cave-door">
-              <span className="cave-glow" />
-              <span className="cave-step cave-step--1" />
-              <span className="cave-step cave-step--2" />
-              <span className="cave-step cave-step--3" />
-            </div>
-          </div>
-          <div className="character" aria-hidden="true">
-            <span className="character-head"><i /><b /></span>
-            <span className="character-body" />
-            <span className="character-bag" />
-          </div>
-          <div className="grass-line" />
-        </motion.div>
+
+          <footer>
+            <h2><Sparkles /> 技能简介</h2>
+            <div>{profileContent.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
+          </footer>
+        </div>
       </section>
-      <div className="foreground-plants" aria-hidden="true">
-        {Array.from({ length: 9 }).map((_, index) => <i key={index} />)}
-      </div>
-      <motion.div
-        className="dive-overlay"
-        initial={false}
-        animate={{ opacity: diving ? 1 : 0 }}
-        transition={{ duration: 0.65, delay: diving ? 0.35 : 0 }}
-      >
-        <span>向下探索</span><ArrowDown />
-      </motion.div>
+
+      <JourneySnake stage="surface" nextHref="/portfolio" />
     </main>
   );
 }
