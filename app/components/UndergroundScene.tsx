@@ -20,8 +20,8 @@ const surfaceSeasons = ["spring", "summer", "autumn", "winter"] as const;
 export function UndergroundScene() {
   const [{ season, weather }] = useWorldPreferences();
 
-  const backgroundImage = "/learning-cave-summer-v20.png";
-  const wideBackgroundImage = "/learning-cave-study-ultrawide-v25.png";
+  const backgroundImage = "/learning-study-burrow-ultrawide-v1.png";
+  const wideBackgroundImage = "/learning-study-burrow-ultrawide-v1.png";
 
   return (
     <main
@@ -40,9 +40,9 @@ export function UndergroundScene() {
           aria-hidden="true"
         />
         <header className="scene-chapter scene-chapter--portfolio">
-          <span>LEVEL −01 · ARCHIVE</span>
-          <strong>学习洞穴</strong>
-          <p>沿着暖光找到项目档案，点击书架里的文件查看完整记录。</p>
+          <span>LEVEL −01 · STUDY ARCHIVE</span>
+          <strong>地下书房</strong>
+          <p>研究、书写与原型散落在暖光里，点击书架中的档案继续阅读。</p>
         </header>
         <div className="portfolio-scene-canvas">
           <div className="cave-artboard cave-artboard--portfolio">
