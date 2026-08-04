@@ -20,10 +20,7 @@ export function UndergroundScene() {
 
   const backgroundImage = "/learning-cave-summer-v20.png";
   const wideBackgroundImage = "/learning-cave-summer-ultrawide-v21.png";
-  const surfaceImage =
-    weather === "rain"
-      ? `/surface-${season}-rain-v1.png`
-      : `/surface-${season}-v5.png`;
+  const surfaceImage = `/portfolio-surface-${season}-v2.png`;
 
   return (
     <main
