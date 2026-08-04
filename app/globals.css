@@ -896,13 +896,15 @@ button, input { font: inherit; }
 .world-dive-overlay svg { animation: arrow-dive 1s ease-in-out infinite; }
 
 .world-portfolio {
-  min-height: 100vh;
+  height: 100svh;
+  min-height: 100svh;
   overflow: hidden;
   color: #f7e9ce;
   background: #151111;
 }
 .portfolio-cross-section {
   position: relative;
+  height: 100svh;
   min-height: 100svh;
   overflow: hidden;
 }
@@ -2051,13 +2053,16 @@ button, input { font: inherit; }
 
 /* Level −02 */
 .deep-page {
+  height: 100svh;
   min-height: 100svh;
+  overflow: hidden;
   color: #f6e6cb;
   background: #0d0a09;
 }
 .deep-cross-section {
   position: relative;
   display: grid;
+  height: 100svh;
   min-height: 100svh;
   overflow: hidden;
   place-items: center;
