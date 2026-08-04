@@ -2777,10 +2777,11 @@ button, input { font: inherit; }
     transform: translateX(-50%);
   }
 
-  /* LEVEL -01 follows the surface page's full-bleed treatment. Size the
+  /* Both cave levels follow the surface page's full-bleed treatment. Size the
      entire coordinate plane like object-fit: cover so artwork and hotspots
      are cropped and scaled together instead of leaving a smaller stage. */
-  .cave-artboard--portfolio {
+  .cave-artboard--portfolio,
+  .cave-artboard--deep {
     top: 50%;
     bottom: auto;
     width: max(100vw, 177.683316svh);
@@ -2788,7 +2789,8 @@ button, input { font: inherit; }
     transform: translate(-50%, -50%);
   }
 
-  .portfolio-cross-section__backdrop {
+  .portfolio-cross-section__backdrop,
+  .deep-cross-section::before {
     display: none;
   }
 
