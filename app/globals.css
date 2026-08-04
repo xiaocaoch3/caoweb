@@ -2566,17 +2566,21 @@ button, input { font: inherit; }
   transform: none;
   transition: filter .45s ease;
 }
+.world-portfolio[data-season="spring"] { --portfolio-surface-shift: .85svh; }
+.world-portfolio[data-season="summer"] { --portfolio-surface-shift: 0px; }
+.world-portfolio[data-season="autumn"] { --portfolio-surface-shift: .21svh; }
+.world-portfolio[data-season="winter"] { --portfolio-surface-shift: -.21svh; }
 .portfolio-season-surface {
   position: absolute;
   z-index: 1;
   inset: 0;
   pointer-events: none;
   background-image: var(--portfolio-surface-image);
-  background-position: center bottom;
+  background-position: center calc(100% + var(--portfolio-surface-shift, 0px));
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  -webkit-mask-image: linear-gradient(180deg, #000 0 19%, rgba(0, 0, 0, .88) 21%, transparent 26%);
-  mask-image: linear-gradient(180deg, #000 0 19%, rgba(0, 0, 0, .88) 21%, transparent 26%);
+  -webkit-mask-image: linear-gradient(180deg, #000 0 25%, rgba(0, 0, 0, .88) 27%, transparent 30%);
+  mask-image: linear-gradient(180deg, #000 0 25%, rgba(0, 0, 0, .88) 27%, transparent 30%);
 }
 .portfolio-cross-section::before {
   position: absolute;
@@ -2646,7 +2650,7 @@ button, input { font: inherit; }
     background-size: cover;
   }
   .portfolio-season-surface {
-    background-position: 70% bottom;
+    background-position: 70% calc(100% + var(--portfolio-surface-shift, 0px));
     background-size: cover;
   }
   .level-stairway {
@@ -2728,7 +2732,7 @@ button, input { font: inherit; }
   }
 
   .portfolio-season-surface {
-    background-position: 66% bottom;
+    background-position: 66% calc(100% + var(--portfolio-surface-shift, 0px));
     background-size: cover;
   }
 
@@ -2752,6 +2756,11 @@ button, input { font: inherit; }
 /* Desktop cave theatre: show the full 1672x941 artwork as one stage so the
    background, hotspots and guide character always stay registered together. */
 @media (min-width: 701px) {
+  .world-portfolio[data-season="spring"] { --portfolio-surface-shift: 6.05svh; }
+  .world-portfolio[data-season="summer"] { --portfolio-surface-shift: 0px; }
+  .world-portfolio[data-season="autumn"] { --portfolio-surface-shift: -1.26svh; }
+  .world-portfolio[data-season="winter"] { --portfolio-surface-shift: -4.92svh; }
+
   .world-portfolio,
   .deep-page {
     height: 100svh;
@@ -2837,7 +2846,7 @@ button, input { font: inherit; }
 
   .portfolio-season-surface {
     background-image: var(--portfolio-wide-surface-image);
-    background-position: center bottom;
+    background-position: center calc(100% + var(--portfolio-surface-shift, 0px));
     background-size: 100% 100%;
   }
 
