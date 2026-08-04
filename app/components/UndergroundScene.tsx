@@ -21,7 +21,7 @@ export function UndergroundScene() {
   const [{ season, weather }] = useWorldPreferences();
 
   const backgroundImage = "/learning-cave-summer-v20.png";
-  const wideBackgroundImage = "/learning-cave-summer-ultrawide-v21.png";
+  const wideBackgroundImage = "/learning-cave-summer-ultrawide-v23.png";
 
   return (
     <main

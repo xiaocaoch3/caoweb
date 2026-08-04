@@ -2577,24 +2577,26 @@ button, input { font: inherit; }
   position: absolute;
   z-index: 1;
   inset: 0 0 auto;
-  height: 24%;
+  height: 26%;
   overflow: hidden;
   pointer-events: none;
   background-position: center var(--portfolio-surface-offset);
   background-repeat: no-repeat;
-  background-size: auto 416.667%;
+  background-size: auto 384.615%;
   -webkit-mask-image: linear-gradient(
     180deg,
-    #000 0 84%,
-    rgba(0, 0, 0, .92) 88%,
-    rgba(0, 0, 0, .44) 95%,
+    #000 0 80%,
+    rgba(0, 0, 0, .96) 84%,
+    rgba(0, 0, 0, .72) 91%,
+    rgba(0, 0, 0, .28) 97%,
     transparent 100%
   );
   mask-image: linear-gradient(
     180deg,
-    #000 0 84%,
-    rgba(0, 0, 0, .92) 88%,
-    rgba(0, 0, 0, .44) 95%,
+    #000 0 80%,
+    rgba(0, 0, 0, .96) 84%,
+    rgba(0, 0, 0, .72) 91%,
+    rgba(0, 0, 0, .28) 97%,
     transparent 100%
   );
   opacity: 0;
@@ -2603,6 +2605,16 @@ button, input { font: inherit; }
 }
 .portfolio-surface-world.is-active {
   opacity: 1;
+}
+.portfolio-surface-world::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 24%;
+  content: "";
+  background: linear-gradient(180deg, transparent, rgba(17, 10, 7, .18));
+  mix-blend-mode: multiply;
 }
 .portfolio-cross-section::before {
   position: absolute;
@@ -2676,7 +2688,7 @@ button, input { font: inherit; }
   }
   .portfolio-surface-world {
     background-position: center var(--portfolio-surface-offset);
-    background-size: auto 416.667%;
+    background-size: auto 384.615%;
   }
   .level-stairway {
     top: 43%;
@@ -2758,7 +2770,7 @@ button, input { font: inherit; }
 
   .portfolio-surface-world {
     background-position: center var(--portfolio-surface-offset);
-    background-size: auto 416.667%;
+    background-size: auto 384.615%;
   }
 
   .portfolio-cross-section__art::after {
@@ -2873,21 +2885,23 @@ button, input { font: inherit; }
   }
 
   .portfolio-surface-world {
-    height: 32%;
+    height: 34%;
     background-position: center var(--portfolio-surface-offset);
-    background-size: 100% 312.5%;
+    background-size: 100% 294.118%;
     -webkit-mask-image: linear-gradient(
       180deg,
-      #000 0 87%,
-      rgba(0, 0, 0, .94) 90%,
-      rgba(0, 0, 0, .5) 96%,
+      #000 0 86%,
+      rgba(0, 0, 0, .96) 89%,
+      rgba(0, 0, 0, .7) 94%,
+      rgba(0, 0, 0, .26) 98%,
       transparent 100%
     );
     mask-image: linear-gradient(
       180deg,
-      #000 0 87%,
-      rgba(0, 0, 0, .94) 90%,
-      rgba(0, 0, 0, .5) 96%,
+      #000 0 86%,
+      rgba(0, 0, 0, .96) 89%,
+      rgba(0, 0, 0, .7) 94%,
+      rgba(0, 0, 0, .26) 98%,
       transparent 100%
     );
   }
@@ -2897,11 +2911,11 @@ button, input { font: inherit; }
   }
 
   .cave-artboard--portfolio .level-stairway {
-    top: 38%;
+    top: 54%;
     right: auto;
-    left: 69%;
-    width: 18%;
-    height: 35%;
+    left: 62%;
+    width: 12%;
+    height: 34%;
   }
 
   .journey-snake-host--level-one {
