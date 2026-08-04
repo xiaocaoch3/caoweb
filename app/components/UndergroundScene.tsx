@@ -15,12 +15,13 @@ const surfaceRainDrops = Array.from({ length: 24 }, (_, index) => ({
   animationDuration: `${0.72 + (index % 6) * 0.1}s`,
 }));
 
+const surfaceSeasons = ["spring", "summer", "autumn", "winter"] as const;
+
 export function UndergroundScene() {
   const [{ season, weather }] = useWorldPreferences();
 
   const backgroundImage = "/learning-cave-summer-v20.png";
   const wideBackgroundImage = "/learning-cave-summer-ultrawide-v21.png";
-  const surfaceImage = `/portfolio-surface-${season}-v2.png`;
 
   return (
     <main
@@ -53,12 +54,17 @@ export function UndergroundScene() {
               } as CSSProperties}
               aria-hidden="true"
             />
-            <div
-              key={`${season}-${weather}`}
-              className="portfolio-surface-world"
-              style={{ backgroundImage: `url("${surfaceImage}")` }}
-              aria-hidden="true"
-            />
+            {surfaceSeasons.map((surfaceSeason) => (
+              <div
+                key={surfaceSeason}
+                className={`portfolio-surface-world${surfaceSeason === season ? " is-active" : ""}`}
+                data-surface-season={surfaceSeason}
+                style={{
+                  backgroundImage: `url("/portfolio-surface-${surfaceSeason}-v2.png")`,
+                }}
+                aria-hidden="true"
+              />
+            ))}
             {weather === "rain" && (
               <div
                 className="rain-overlay portfolio-surface-rain"
