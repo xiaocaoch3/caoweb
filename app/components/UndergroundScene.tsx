@@ -20,8 +20,8 @@ const surfaceSeasons = ["spring", "summer", "autumn", "winter"] as const;
 export function UndergroundScene() {
   const [{ season, weather }] = useWorldPreferences();
 
-  const backgroundImage = "/learning-cave-study-ultrawide-v28.png";
-  const wideBackgroundImage = "/learning-cave-study-ultrawide-v28.png";
+  const backgroundImage = "/learning-cave-study-ultrawide-v29.png";
+  const wideBackgroundImage = "/learning-cave-study-ultrawide-v29.png";
 
   return (
     <main
