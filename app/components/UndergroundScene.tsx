@@ -44,11 +44,6 @@ export function UndergroundScene() {
           }}
           aria-hidden="true"
         />
-        <header className="scene-chapter scene-chapter--portfolio">
-          <span>LEVEL −01 · ARCHIVE</span>
-          <strong>学习洞穴</strong>
-          <p>沿着暖光找到项目档案，点击书架里的文件查看完整记录。</p>
-        </header>
         <div className="portfolio-scene-canvas">
           <div className="cave-artboard cave-artboard--portfolio">
             <div
@@ -82,9 +77,6 @@ export function UndergroundScene() {
         </div>
       </section>
 
-      <footer className="world-portfolio-footer">
-        <span>向下滚动继续深入 · 点击小柯基带路</span>
-      </footer>
     </main>
   );
 }
