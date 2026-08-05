@@ -2532,7 +2532,7 @@ button, input { font: inherit; }
 
 /* Level −01: compact seasonal surface, expanded underground rooms */
 .world-portfolio {
-  --portfolio-ground-line: 18%;
+  --portfolio-ground-line: 20.5%;
 }
 .portfolio-surface-world[data-surface-season="spring"] { --portfolio-surface-offset: -13.55svh; }
 .portfolio-surface-world[data-surface-season="summer"] { --portfolio-surface-offset: -14.55svh; }
@@ -2569,7 +2569,7 @@ button, input { font: inherit; }
     var(--portfolio-scene-image);
   background-position: center bottom;
   background-size: 100% 100%;
-  filter: contrast(.98) saturate(1.08) brightness(1.16);
+  filter: contrast(.96) saturate(1.06) brightness(1.12);
   transform: none;
   transition: filter .45s ease;
 }
@@ -2683,7 +2683,7 @@ button, input { font: inherit; }
   .portfolio-cross-section__art {
     inset: 0;
     height: auto;
-    background-position: 54% center;
+    background-position: 70% bottom;
     background-size: cover;
   }
   .portfolio-surface-world {
@@ -2764,7 +2764,7 @@ button, input { font: inherit; }
   .portfolio-cross-section__art {
     inset: 0;
     height: auto;
-    background-position: 54% center;
+    background-position: 66% bottom;
     background-size: cover;
   }
 
@@ -2801,7 +2801,7 @@ button, input { font: inherit; }
   }
 
   .world-portfolio {
-    --portfolio-ground-line: 18%;
+    --portfolio-ground-line: 28.5%;
   }
   .portfolio-surface-world[data-surface-season="spring"] { --portfolio-surface-offset: -5.55svh; }
   .portfolio-surface-world[data-surface-season="summer"] { --portfolio-surface-offset: -6.55svh; }
@@ -2885,9 +2885,9 @@ button, input { font: inherit; }
   }
 
   .portfolio-surface-world {
-    height: 21%;
+    height: 34%;
     background-position: center var(--portfolio-surface-offset);
-    background-size: 100% 476.19%;
+    background-size: 100% 294.118%;
     -webkit-mask-image: linear-gradient(
       180deg,
       #000 0 86%,
@@ -2911,16 +2911,16 @@ button, input { font: inherit; }
   }
 
   .cave-artboard--portfolio .level-stairway {
-    top: 66%;
+    top: 70%;
     right: auto;
-    left: 65%;
-    width: 12%;
-    height: 32%;
+    left: 68%;
+    width: 13%;
+    height: 30%;
   }
 
   .journey-snake-host--level-one {
-    left: 51%;
-    bottom: 23%;
+    left: 48%;
+    bottom: 27%;
   }
 
   .journey-snake-host--level-two {
