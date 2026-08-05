@@ -20,8 +20,8 @@ const surfaceSeasons = ["spring", "summer", "autumn", "winter"] as const;
 export function UndergroundScene() {
   const [{ season, weather }] = useWorldPreferences();
 
-  const backgroundImage = "/learning-cave-study-ultrawide-v27.png";
-  const wideBackgroundImage = "/learning-cave-study-ultrawide-v27.png";
+  const backgroundImage = "/learning-cave-study-ultrawide-v28.png";
+  const wideBackgroundImage = "/learning-cave-study-ultrawide-v28.png";
 
   return (
     <main
@@ -60,7 +60,7 @@ export function UndergroundScene() {
                 className={`portfolio-surface-world${surfaceSeason === season ? " is-active" : ""}`}
                 data-surface-season={surfaceSeason}
                 style={{
-                  backgroundImage: `url("/portfolio-surface-${surfaceSeason}-v3.png")`,
+                  backgroundImage: `url("${wideBackgroundImage}")`,
                 }}
                 aria-hidden="true"
               />
