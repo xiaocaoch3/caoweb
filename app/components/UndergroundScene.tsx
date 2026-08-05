@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import type { CSSProperties } from "react";
 import { JourneySnake } from "./JourneySnake";
 import { SiteNav } from "./SiteNav";
@@ -16,10 +15,10 @@ const surfaceRainDrops = Array.from({ length: 24 }, (_, index) => ({
 }));
 
 const seasonBackgrounds = {
-  spring: "/learning-cave-study-spring-v30.png",
-  summer: "/learning-cave-study-summer-v30.png",
-  autumn: "/learning-cave-study-autumn-v30.png",
-  winter: "/learning-cave-study-winter-v30.png",
+  spring: "/learning-cave-study-spring-v31.png",
+  summer: "/learning-cave-study-summer-v31.png",
+  autumn: "/learning-cave-study-autumn-v31.png",
+  winter: "/learning-cave-study-winter-v31.png",
 } as const;
 
 export function UndergroundScene() {
@@ -64,13 +63,6 @@ export function UndergroundScene() {
                 ))}
               </div>
             )}
-            <Link
-              className="level-stairway"
-              href="/deep"
-              aria-label="穿过侧向通道前往更深层地下"
-            >
-              <span className="sr-only">穿过侧向通道前往更深层地下</span>
-            </Link>
             <ArchiveHotspots />
             <JourneySnake stage="level-one" previousHref="/" nextHref="/deep" />
           </div>
