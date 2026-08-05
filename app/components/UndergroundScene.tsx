@@ -60,7 +60,7 @@ export function UndergroundScene() {
                 className={`portfolio-surface-world${surfaceSeason === season ? " is-active" : ""}`}
                 data-surface-season={surfaceSeason}
                 style={{
-                  backgroundImage: `url("/portfolio-surface-${surfaceSeason}-v2.png")`,
+                  backgroundImage: `url("/portfolio-surface-${surfaceSeason}-v3.png")`,
                 }}
                 aria-hidden="true"
               />
