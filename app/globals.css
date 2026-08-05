@@ -2535,19 +2535,15 @@ button, input { font: inherit; }
   --portfolio-ground-line: 20.5%;
 }
 .portfolio-surface-world[data-surface-season="spring"] {
-  --portfolio-surface-offset: -13.55svh;
   --portfolio-surface-filter: saturate(.72) contrast(.94) brightness(1.01);
 }
 .portfolio-surface-world[data-surface-season="summer"] {
-  --portfolio-surface-offset: -14.55svh;
   --portfolio-surface-filter: saturate(.9) contrast(.97) brightness(.98);
 }
 .portfolio-surface-world[data-surface-season="autumn"] {
-  --portfolio-surface-offset: -14.55svh;
   --portfolio-surface-filter: saturate(.6) contrast(.91) brightness(1.03) sepia(.08);
 }
 .portfolio-surface-world[data-surface-season="winter"] {
-  --portfolio-surface-offset: -14.8svh;
   --portfolio-surface-filter: saturate(.45) contrast(.89) brightness(1.07);
 }
 .portfolio-cross-section {
@@ -2592,7 +2588,7 @@ button, input { font: inherit; }
   height: 32%;
   overflow: hidden;
   pointer-events: none;
-  background-position: center var(--portfolio-surface-offset);
+  background-position: center top;
   background-repeat: no-repeat;
   background-size: auto 312.5%;
   -webkit-mask-image: linear-gradient(
@@ -2700,8 +2696,7 @@ button, input { font: inherit; }
     background-size: cover;
   }
   .portfolio-surface-world {
-    background-position: center var(--portfolio-surface-offset);
-    background-size: auto 384.615%;
+    display: none;
   }
   .level-stairway {
     top: 43%;
@@ -2782,8 +2777,7 @@ button, input { font: inherit; }
   }
 
   .portfolio-surface-world {
-    background-position: center var(--portfolio-surface-offset);
-    background-size: auto 384.615%;
+    display: none;
   }
 
   .portfolio-cross-section__art::after {
@@ -2816,11 +2810,6 @@ button, input { font: inherit; }
   .world-portfolio {
     --portfolio-ground-line: 23.5%;
   }
-  .portfolio-surface-world[data-surface-season="spring"] { --portfolio-surface-offset: -9.2svh; }
-  .portfolio-surface-world[data-surface-season="summer"] { --portfolio-surface-offset: -10.2svh; }
-  .portfolio-surface-world[data-surface-season="autumn"] { --portfolio-surface-offset: -10.2svh; }
-  .portfolio-surface-world[data-surface-season="winter"] { --portfolio-surface-offset: -10.45svh; }
-
   .portfolio-cross-section,
   .deep-cross-section {
     height: 100svh;
@@ -2899,7 +2888,7 @@ button, input { font: inherit; }
 
   .portfolio-surface-world {
     height: 32%;
-    background-position: center var(--portfolio-surface-offset);
+    background-position: center top;
     background-size: 100% 312.5%;
     -webkit-mask-image: linear-gradient(
       180deg,
