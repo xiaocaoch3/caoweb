@@ -2534,17 +2534,29 @@ button, input { font: inherit; }
 .world-portfolio {
   --portfolio-ground-line: 20.5%;
 }
+.world-portfolio[data-season="spring"] {
+  --portfolio-season-overlay: linear-gradient(180deg, rgba(255, 244, 205, .12), rgba(142, 177, 103, .13) 76%, transparent);
+}
+.world-portfolio[data-season="summer"] {
+  --portfolio-season-overlay: linear-gradient(180deg, rgba(74, 165, 218, .12), rgba(255, 194, 75, .13) 76%, transparent);
+}
+.world-portfolio[data-season="autumn"] {
+  --portfolio-season-overlay: linear-gradient(180deg, rgba(191, 101, 41, .25), rgba(127, 72, 38, .2) 76%, transparent);
+}
+.world-portfolio[data-season="winter"] {
+  --portfolio-season-overlay: linear-gradient(180deg, rgba(213, 234, 241, .31), rgba(172, 195, 203, .22) 76%, transparent);
+}
 .portfolio-surface-world[data-surface-season="spring"] {
-  --portfolio-surface-filter: saturate(.72) contrast(.94) brightness(1.01);
+  --portfolio-surface-filter: saturate(.82) contrast(.94) brightness(1.04);
 }
 .portfolio-surface-world[data-surface-season="summer"] {
-  --portfolio-surface-filter: saturate(.9) contrast(.97) brightness(.98);
+  --portfolio-surface-filter: saturate(1.16) contrast(1.01) brightness(1.01);
 }
 .portfolio-surface-world[data-surface-season="autumn"] {
-  --portfolio-surface-filter: saturate(.6) contrast(.91) brightness(1.03) sepia(.08);
+  --portfolio-surface-filter: saturate(.82) contrast(.96) brightness(.97) sepia(.38) hue-rotate(-9deg);
 }
 .portfolio-surface-world[data-surface-season="winter"] {
-  --portfolio-surface-filter: saturate(.45) contrast(.89) brightness(1.07);
+  --portfolio-surface-filter: saturate(.2) contrast(.9) brightness(1.13) hue-rotate(10deg);
 }
 .portfolio-cross-section {
   display: grid;
@@ -2648,19 +2660,16 @@ button, input { font: inherit; }
   height: var(--portfolio-ground-line, 22%);
   content: "";
   pointer-events: none;
-  background: transparent;
+  background: var(--portfolio-season-overlay, transparent);
   transition: background .45s ease;
 }
 .world-portfolio[data-weather="rain"] .portfolio-cross-section::after {
-  background: linear-gradient(
-    180deg,
-    rgba(47, 69, 76, .34),
-    rgba(62, 75, 72, .17) 72%,
-    transparent
-  );
+  background:
+    linear-gradient(180deg, rgba(38, 57, 65, .42), rgba(53, 66, 64, .23) 72%, transparent),
+    var(--portfolio-season-overlay, transparent);
 }
 .world-portfolio[data-weather="rain"] .portfolio-surface-world {
-  filter: var(--portfolio-surface-filter) brightness(.78) saturate(.76) contrast(.98);
+  filter: var(--portfolio-surface-filter) brightness(.72) saturate(.68) contrast(.96);
 }
 .portfolio-surface-rain {
   z-index: 4;
@@ -2669,6 +2678,7 @@ button, input { font: inherit; }
 }
 .portfolio-surface-rain span {
   animation-name: portfolio-surface-raindrop;
+  filter: drop-shadow(0 0 2px rgba(220, 239, 244, .55));
 }
 @keyframes portfolio-surface-raindrop {
   from { transform: translate3d(0, -4vh, 0); }
