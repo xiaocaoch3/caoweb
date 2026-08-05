@@ -15,10 +15,10 @@ const surfaceRainDrops = Array.from({ length: 24 }, (_, index) => ({
 }));
 
 const seasonBackgrounds = {
-  spring: "/learning-cave-study-spring-v33.png",
-  summer: "/learning-cave-study-summer-v33.png",
-  autumn: "/learning-cave-study-autumn-v33.png",
-  winter: "/learning-cave-study-winter-v33.png",
+  spring: "/learning-cave-study-spring-v34.png",
+  summer: "/learning-cave-study-summer-v34.png",
+  autumn: "/learning-cave-study-autumn-v34.png",
+  winter: "/learning-cave-study-winter-v34.png",
 } as const;
 
 export function UndergroundScene() {
