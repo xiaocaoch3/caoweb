@@ -2600,6 +2600,7 @@ button, input { font: inherit; }
     transparent 100%
   );
   opacity: 0;
+  filter: saturate(.78) contrast(.95) brightness(.97);
   transition: opacity .45s ease, filter .45s ease;
   will-change: opacity, filter;
 }
