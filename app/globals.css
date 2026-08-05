@@ -2534,10 +2534,22 @@ button, input { font: inherit; }
 .world-portfolio {
   --portfolio-ground-line: 20.5%;
 }
-.portfolio-surface-world[data-surface-season="spring"] { --portfolio-surface-offset: -13.55svh; }
-.portfolio-surface-world[data-surface-season="summer"] { --portfolio-surface-offset: -14.55svh; }
-.portfolio-surface-world[data-surface-season="autumn"] { --portfolio-surface-offset: -14.55svh; }
-.portfolio-surface-world[data-surface-season="winter"] { --portfolio-surface-offset: -14.8svh; }
+.portfolio-surface-world[data-surface-season="spring"] {
+  --portfolio-surface-offset: -13.55svh;
+  --portfolio-surface-filter: saturate(.72) contrast(.94) brightness(1.01);
+}
+.portfolio-surface-world[data-surface-season="summer"] {
+  --portfolio-surface-offset: -14.55svh;
+  --portfolio-surface-filter: saturate(.9) contrast(.97) brightness(.98);
+}
+.portfolio-surface-world[data-surface-season="autumn"] {
+  --portfolio-surface-offset: -14.55svh;
+  --portfolio-surface-filter: saturate(.6) contrast(.91) brightness(1.03) sepia(.08);
+}
+.portfolio-surface-world[data-surface-season="winter"] {
+  --portfolio-surface-offset: -14.8svh;
+  --portfolio-surface-filter: saturate(.45) contrast(.89) brightness(1.07);
+}
 .portfolio-cross-section {
   display: grid;
   min-height: 100svh;
@@ -2600,7 +2612,7 @@ button, input { font: inherit; }
     transparent 100%
   );
   opacity: 0;
-  filter: saturate(.78) contrast(.95) brightness(.97);
+  filter: var(--portfolio-surface-filter);
   transition: opacity .45s ease, filter .45s ease;
   will-change: opacity, filter;
 }
@@ -2652,7 +2664,7 @@ button, input { font: inherit; }
   );
 }
 .world-portfolio[data-weather="rain"] .portfolio-surface-world {
-  filter: brightness(.74) saturate(.68) contrast(.94);
+  filter: var(--portfolio-surface-filter) brightness(.78) saturate(.76) contrast(.98);
 }
 .portfolio-surface-rain {
   z-index: 4;
