@@ -2598,9 +2598,6 @@ button, input { font: inherit; }
 .world-portfolio[data-weather="rain"] .portfolio-cross-section::after {
   background: linear-gradient(180deg, rgba(38, 57, 65, .42), rgba(53, 66, 64, .23) 72%, transparent);
 }
-.world-portfolio[data-weather="rain"] .portfolio-cross-section__art {
-  filter: contrast(.94) saturate(.78) brightness(.78);
-}
 .portfolio-surface-rain {
   z-index: 4;
   inset: 0 0 auto;
