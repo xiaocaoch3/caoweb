@@ -1538,7 +1538,7 @@ button, input { font: inherit; }
   transform: rotate(-2deg);
 }
 .journey-snake-host--level-two {
-  left: 26%;
+  left: 30.5%;
   top: 72.5%;
   width: clamp(74px, 6vw, 94px);
 }
@@ -2281,7 +2281,7 @@ button, input { font: inherit; }
     bottom: 27%;
   }
   .journey-snake-host--level-two {
-    left: 26%;
+    left: 30.5%;
     top: 72.5%;
   }
 
@@ -2489,7 +2489,7 @@ button, input { font: inherit; }
 
   .journey-snake-host--level-two {
     top: 72.5%;
-    left: 26%;
+    left: 30.5%;
     width: clamp(48px, 8vw, 72px);
   }
 
@@ -2837,7 +2837,7 @@ button, input { font: inherit; }
 
   .journey-snake-host--level-two {
     top: 72.5%;
-    left: 26%;
+    left: 30.5%;
   }
 
   .portfolio-surface-rain {
