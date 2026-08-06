@@ -48,7 +48,7 @@ export const archiveFolders: ArchiveFolder[] = [
     summary: "围绕一个真实使用场景，识别问题并把洞察转化为可落地的产品方向。",
     work: ["梳理用户任务与关键痛点", "定义产品机会与优先级", "协同设计和研发推进验证"],
     result: "在这里填写项目结果、数据变化或最终交付物。",
-    position: { x: "35.8%", y: "58%" },
+    position: { x: "50.6%", y: "58.2%" },
   },
   {
     id: "hardware",
@@ -60,7 +60,7 @@ export const archiveFolders: ArchiveFolder[] = [
     summary: "从使用场景出发，在体验、成本、工程约束之间完成产品定义。",
     work: ["拆解核心场景与功能边界", "整理硬件规格和交互状态", "跟进样机测试与问题闭环"],
     result: "在这里填写样机、版本节点或跨团队协作成果。",
-    position: { x: "37.2%", y: "58%" },
+    position: { x: "52.3%", y: "58.2%" },
   },
   {
     id: "research",
@@ -72,7 +72,7 @@ export const archiveFolders: ArchiveFolder[] = [
     summary: "通过用户、市场和竞品研究，把零散信息组织成清晰的判断依据。",
     work: ["制定研究问题与样本计划", "归纳行为模式与机会点", "输出策略建议和验证路径"],
     result: "在这里填写研究覆盖范围和被采纳的关键结论。",
-    position: { x: "38.6%", y: "58%" },
+    position: { x: "54%", y: "58.2%" },
   },
 ];
 
