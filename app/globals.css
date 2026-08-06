@@ -1529,8 +1529,8 @@ button, input { font: inherit; }
   bottom: 15%;
 }
 .journey-snake-host--level-one {
-  left: 68%;
-  bottom: max(24%, 12.5vw);
+  left: 62%;
+  bottom: max(20%, 12.5vw);
   width: clamp(68px, 5.6vw, 88px);
   transform: rotate(-2deg);
 }
@@ -2274,8 +2274,8 @@ button, input { font: inherit; }
     bottom: 20%;
   }
   .journey-snake-host--level-one {
-    left: 68%;
-    bottom: 31%;
+    left: 62%;
+    bottom: 27%;
   }
   .journey-snake-host--level-two {
     left: 43%;
@@ -2479,8 +2479,8 @@ button, input { font: inherit; }
   }
 
   .journey-snake-host--level-one {
-    left: 68%;
-    bottom: 31%;
+    left: 62%;
+    bottom: 27%;
     width: clamp(48px, 8vw, 72px);
   }
 
@@ -2828,8 +2828,8 @@ button, input { font: inherit; }
   }
 
   .journey-snake-host--level-one {
-    left: 68%;
-    bottom: 24%;
+    left: 62%;
+    bottom: 20%;
   }
 
   .journey-snake-host--level-two {
