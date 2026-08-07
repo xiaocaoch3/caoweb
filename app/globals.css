@@ -1075,13 +1075,14 @@ button, input { font: inherit; }
 .surface-profile {
   position: absolute;
   z-index: 7;
-  top: 90px;
+  top: 122px;
   left: 3%;
   display: grid;
   grid-template-columns: minmax(190px, 240px) minmax(0, 1fr);
   gap: 24px;
-  width: min(900px, 82vw);
-  max-height: calc(100svh - 108px);
+  width: 94.3vw;
+  height: min(533px, calc(100svh - 140px));
+  max-height: calc(100svh - 140px);
   padding: 20px;
   overflow: auto;
   color: #213e3c;
@@ -1418,6 +1419,7 @@ button, input { font: inherit; }
     left: auto;
     display: block;
     width: auto;
+    height: auto;
     max-height: none;
     margin: 86px 14px 130px;
     padding: 12px;
@@ -1528,8 +1530,8 @@ button, input { font: inherit; }
   aspect-ratio: 1;
 }
 .journey-snake-host--surface {
-  left: calc(50% - 244px);
-  bottom: 15%;
+  left: 19.5%;
+  bottom: 3.3%;
 }
 .journey-snake-host--level-one {
   left: 62%;
