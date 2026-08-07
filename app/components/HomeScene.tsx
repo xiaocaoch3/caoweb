@@ -1,9 +1,11 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { BriefcaseBusiness, GraduationCap, Sparkles, UserRound } from "lucide-react";
 import { JourneySnake } from "./JourneySnake";
 import { SiteNav } from "./SiteNav";
 import { useWorldPreferences } from "./world-preferences";
+import { profileContent } from "../data/site-content";
 
 const rainDrops = Array.from({ length: 24 }, (_, index) => ({
   left: `${(index * 37 + 11) % 101}%`,
@@ -46,6 +48,51 @@ export function HomeScene() {
           ))}
         </div>
       )}
+
+      <section className="surface-profile" aria-label="个人简介">
+        <div className="surface-profile__photo" role="img" aria-label={profileContent.photoAlt}>
+          <UserRound aria-hidden="true" />
+          <span>PHOTO</span>
+          <small>后续替换为个人照片</small>
+        </div>
+
+        <div className="surface-profile__content">
+          <header>
+            <p>ABOUT ME</p>
+            <h1>个人经历与能力</h1>
+            <span>这里将用照片和简洁的履历，帮助浏览者快速认识你。</span>
+          </header>
+
+          <div className="surface-profile__sections">
+            <article>
+              <h2><GraduationCap /> 教育经历</h2>
+              {profileContent.education.map((item) => (
+                <div className="profile-entry" key={`${item.period}-${item.school}`}>
+                  <time>{item.period}</time>
+                  <strong>{item.school}</strong>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </article>
+
+            <article>
+              <h2><BriefcaseBusiness /> 实习与实践</h2>
+              {profileContent.practice.map((item) => (
+                <div className="profile-entry" key={`${item.period}-${item.organization}`}>
+                  <time>{item.period}</time>
+                  <strong>{item.organization} · {item.role}</strong>
+                  <p>{item.detail}</p>
+                </div>
+              ))}
+            </article>
+          </div>
+
+          <footer>
+            <h2><Sparkles /> 技能简介</h2>
+            <div>{profileContent.skills.map((skill) => <span key={skill}>{skill}</span>)}</div>
+          </footer>
+        </div>
+      </section>
 
       <JourneySnake stage="surface" nextHref="/portfolio" />
     </main>

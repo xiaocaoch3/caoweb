@@ -79,7 +79,10 @@ export function SiteNav({ underground = false }: SiteNavProps) {
         </nav>
       </header>
 
-      <nav className="page-dots" aria-label="三页切换">
+      <nav
+        className={`page-dots ${underground ? "page-dots--underground" : ""}`}
+        aria-label="三页切换"
+      >
         {pages.map((page) => {
           const isCurrent =
             page.href === "/"
@@ -96,7 +99,9 @@ export function SiteNav({ underground = false }: SiteNavProps) {
               aria-label={page.label}
               aria-current={isCurrent ? "page" : undefined}
               title={page.label}
-            />
+            >
+              <i className="page-dot__marker" aria-hidden="true" />
+            </Link>
           );
         })}
       </nav>
